@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pth
+*.safetensors
+*.log
+work_dirs/
+outputs/
+datasets/
+data/
+runs/

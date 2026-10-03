@@ -1,0 +1,61 @@
+# GEAS Training Configuration (LoveDA)
+
+# Paths
+data_root: ./datasets/LoveDA
+checkpoint_dir: ./checkpoints
+output_dir: ./outputs
+log_dir: ./logs
+vis_dir: ./vis
+
+# Backbone
+backbone:
+  name: vitl16
+  checkpoint: ./checkpoints/dinov3_vitl16_pretrain_sat493m-eadcf0ff.pth
+
+# SSD-LoRA
+lora:
+  mode: ssd
+  rank_config: progressive
+  uniform_rank: 8
+  target_modules: [qkv, fc1, fc2]
+
+# Feature extraction (1-indexed block numbers)
+layers_to_extract: [6, 12, 18, 24]
+patch_size: 16
+
+# Decoder
+decoder:
+  type: mlp
+  embed_dim: 256
+
+# Number of classes (LoveDA: 7)
+num_classes: 7
+
+# Training
+image_size: 512
+batch_size: 8
+grad_accum_steps: 2
+epochs: 50
+lr: 1.5e-4
+weight_decay: 0.05
+warmup_iters: 1000
+max_iters: 0
+scheduler: polynomial
+scheduler_power: 0.9
+
+# Loss
+dice_weight: 1.0
+
+# Augmentation
+hflip: true
+vflip: true
+resize_scale: [0.5, 2.0]
+
+# System
+seed: 42
+num_workers: 8
+fp16: true
+gpu_ids: [2]
+
+# Resume from checkpoint (set to path or null)
+resume: null
