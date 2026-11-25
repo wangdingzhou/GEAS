@@ -10,7 +10,7 @@ vis_dir: ./vis
 # Backbone
 backbone:
   name: vitl16
-  checkpoint: ./checkpoints/dinov3_vitl16_pretrain_sat493m-eadcf0ff.pth
+  checkpoint: ./checkpoints/dinov3_vitl16_pretrain_lvd1689m.pth
 
 # SSD-LoRA
 lora:

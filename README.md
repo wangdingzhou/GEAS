@@ -29,7 +29,7 @@ dinov3/         DINOv3 code (facebookresearch/dinov3, Apache-2.0)
 pip install -r requirements.txt
 ```
 
-Download the public DINOv3 ViT-L/16 pretrained checkpoint and set `backbone.checkpoint` in your training configuration.
+Download the public DINOv3 ViT-L/16 (LVD-1689M) pretrained checkpoint and set `backbone.checkpoint` in your training configuration.
 
 ## Training
 
