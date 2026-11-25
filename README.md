@@ -2,16 +2,14 @@
 
 GEAS (Geospatial Efficient Adaptation with Slim decoder): accurate and efficient adaptation of a frozen DINOv3 ViT-L/16 backbone for high-resolution remote sensing semantic segmentation, evaluated on ISPRS Potsdam, ISPRS Vaihingen, LoveDA, and iSAID.
 
-Paper: **GEAS: Accurate and Efficient Adaptation of a Frozen Foundation Model for Remote Sensing Semantic Segmentation** (under review at IEEE TGRS).
-
 ## Model weights
 
-| Checkpoint | Dataset | Metrics (paper, no TTA) | Size | Download |
-|---|---|---|---|---|
-| `GEAS_Potsdam.pth` | ISPRS Potsdam (5 cls) | mIoU-5 88.16 / mF1-5 93.56 | 2.63 GB | [Baidu Netdisk](https://pan.baidu.com/s/1uknpZblgsf_Od74fNTtLmA?pwd=yw2x) (code: yw2x) |
-| `GEAS_Vaihingen.pth` | ISPRS Vaihingen (5 cls) | mIoU-5 85.63 / mF1-5 92.09 | 2.63 GB | [Baidu Netdisk](https://pan.baidu.com/s/175t1QIXdIvsBf5rnFIw-qg?pwd=22up) (code: 22up) |
-| `GEAS_LoveDA.pth` | LoveDA (7 cls) | mIoU-7 57.07 / mF1-7 71.73 | 2.45 GB | [Baidu Netdisk](https://pan.baidu.com/s/1TqHpzxNUB-CDw_Q4QK_tBw?pwd=zwmn) (code: zwmn) |
-| `GEAS_iSAID.pth` | iSAID (16 cls) | mIoU-16 69.75 / mF1-16 81.08 / mIoU-15 67.79 | 2.63 GB | [Baidu Netdisk](https://pan.baidu.com/s/1QknRr2ZV-xv7WcE1mkPrNA?pwd=68a4) (code: 68a4) |
+| Checkpoint | Metrics (paper, no TTA) | Size | Download |
+|---|---|---|---|
+| ISPRS Potsdam (5 classes) | mIoU-5 88.16 / mF1-5 93.56 | 2.63 GB | [Baidu Netdisk](https://pan.baidu.com/s/1uknpZblgsf_Od74fNTtLmA?pwd=yw2x) (code: yw2x) |
+| ISPRS Vaihingen (5 classes) | mIoU-5 85.63 / mF1-5 92.09 | 2.63 GB | [Baidu Netdisk](https://pan.baidu.com/s/175t1QIXdIvsBf5rnFIw-qg?pwd=22up) (code: 22up) |
+| LoveDA (7 classes) | mIoU-7 57.07 / mF1-7 71.73 | 2.45 GB | [Baidu Netdisk](https://pan.baidu.com/s/1TqHpzxNUB-CDw_Q4QK_tBw?pwd=zwmn) (code: zwmn) |
+| iSAID (16 classes) | mIoU-16 69.75 / mF1-16 81.08 / mIoU-15 67.79 | 2.63 GB | [Baidu Netdisk](https://pan.baidu.com/s/1QknRr2ZV-xv7WcE1mkPrNA?pwd=68a4) (code: 68a4) |
 
 Metrics use sliding-window inference (512x512 tiles, stride 256) with no test-time augmentation or post-processing. Checkpoints contain the full training state (model + optimizer); load the model/EMA weights for evaluation. The frozen DINOv3 backbone is not duplicated in the optimizer state.
 
